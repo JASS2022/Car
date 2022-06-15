@@ -4,7 +4,7 @@ import websockets
 message = '{"type": "locationUpdate","data":{"aprilTag":20}}'
 
 async def hello():
-    async with websockets.connect("wss://jass22.finkmartin.com/car") as websocket:
+    async with websockets.connect("ws://192.168.8.128:8080") as websocket:
         await websocket.send(message)
         reply = await websocket.recv()
         print(f"Received {reply}")
